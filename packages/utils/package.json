@@ -1,0 +1,27 @@
+{
+  "name": "@lotus-design/utils",
+  "version": "1.0.0",
+  "description": "React utils",
+  "keywords": [
+    "react",
+    "react-util",
+    "utils"
+  ],
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./es/index.d.ts",
+  "files": [
+    "es",
+    "lib"
+  ],
+  "scripts": {
+    "build": "redbud build"
+  },
+  "license": "MIT",
+  "authors": [
+    "wangxingkang <wang_xingkang@qq.com> (https://github.com/wangxingkang)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

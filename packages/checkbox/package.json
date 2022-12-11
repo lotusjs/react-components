@@ -1,0 +1,29 @@
+{
+  "name": "@lotus-design/checkbox",
+  "version": "1.0.0",
+  "description": "React Checkbox Component",
+  "keywords": [
+    "react",
+    "react-component",
+    "react-checkbox",
+    "checkbox"
+  ],
+  "main": "./lib/index.js",
+  "module": "./es/index.js",
+  "types": "./es/index.d.ts",
+  "files": [
+    "es",
+    "lib"
+  ],
+  "dependencies": {
+    "@pansy/shared": "^1.7.0",
+    "@lotus-design/utils": "^1.0.0"
+  },
+  "license": "MIT",
+  "authors": [
+    "wangxingkang <wang_xingkang@qq.com> (https://github.com/wangxingkang)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

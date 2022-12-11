@@ -1,0 +1,17 @@
+node_modules/
+·
+lib
+es
+dist
+/locale
+
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+.pnpm-debug.log
+
+.dumi/tmp
+.dumi/tmp-test
+.dumi/tmp-production
+
+coverage
