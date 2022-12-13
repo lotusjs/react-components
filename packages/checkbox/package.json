@@ -15,6 +15,11 @@
     "es",
     "lib"
   ],
+  "scripts": {
+    "build": "redbud build",
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
   "dependencies": {
     "@pansy/shared": "^1.7.0",
     "@lotus-design/utils": "^1.0.0"

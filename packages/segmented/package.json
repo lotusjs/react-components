@@ -1,0 +1,50 @@
+{
+  "name": "@lotus-design/segmented",
+  "version": "1.0.0",
+  "description": "React segmented component",
+  "keywords": [
+    "react",
+    "react-component",
+    "react-segmented",
+    "react-segmented-controls",
+    "segmented controls"
+  ],
+  "main": "./lib/index",
+  "module": "./es/index",
+  "types": "./es/index.d.ts",
+  "files": [
+    "assets/*.css",
+    "assets/*.less",
+    "es",
+    "lib",
+    "dist"
+  ],
+  "homepage": "https://react-component.github.io/segmented",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-component/segmented.git"
+  },
+  "bugs": {
+    "url": "http://github.com/react-component/segmented/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "dependencies": {
+    "@pansy/shared": "^1.7.0",
+    "@lotus-design/utils": "^1.0.0",
+    "rc-motion": "^2.6.2"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  }
+}

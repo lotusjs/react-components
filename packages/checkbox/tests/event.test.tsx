@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { KeyCode } from '@pansy/shared';
 import { fireEvent, render } from '@testing-library/react';
-import Checkbox from '../src';
+import { Checkbox } from '../src';
 
 describe('Checkbox.Event', () => {
   it('onFocus', () => {

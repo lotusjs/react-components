@@ -5,7 +5,7 @@ const defaultConfig = createConfig({
 });
 
 const config: Config.InitialOptions = {
-  ...defaultConfig,
+  ...defaultConfig
 }
 
 export default config;
