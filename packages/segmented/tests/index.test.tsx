@@ -2,6 +2,8 @@ import * as React from 'react';
 import { render, act, fireEvent } from '@testing-library/react';
 import { Segmented } from '../src';
 
+import './setup';
+
 jest.mock('rc-motion/lib/util/motion', () => {
   return {
     ...jest.requireActual('rc-motion/lib/util/motion'),
