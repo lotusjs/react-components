@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { classNames } from '@pansy/shared';
 import { useMergedState, omit, composeRef } from '@lotus-design/utils';
+import { normalizeOptions } from './utils';
 
 import MotionThumb from './MotionThumb';
 
@@ -19,7 +20,7 @@ export interface SegmentedLabeledOption {
   title?: string;
 }
 
-type SegmentedOptions = (SegmentedRawOption | SegmentedLabeledOption)[];
+export type SegmentedOptions = (SegmentedRawOption | SegmentedLabeledOption)[];
 
 export interface SegmentedProps
   extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
@@ -31,36 +32,6 @@ export interface SegmentedProps
   prefixCls?: string;
   direction?: 'ltr' | 'rtl';
   motionName?: string;
-}
-
-function getValidTitle(option: SegmentedLabeledOption) {
-  if (typeof option.title !== 'undefined') {
-    return option.title;
-  }
-
-  // read `label` when title is `undefined`
-  if (typeof option.label !== 'object') {
-    return option.label?.toString();
-  }
-}
-
-function normalizeOptions(options: SegmentedOptions): SegmentedLabeledOption[] {
-  return options.map((option) => {
-    if (typeof option === 'object' && option !== null) {
-      const validTitle = getValidTitle(option);
-
-      return {
-        ...option,
-        title: validTitle,
-      };
-    }
-
-    return {
-      label: option?.toString(),
-      title: option?.toString(),
-      value: option,
-    };
-  });
 }
 
 const InternalSegmentedOption: React.FC<{

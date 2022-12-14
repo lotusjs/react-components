@@ -19,13 +19,12 @@
     "lib",
     "dist"
   ],
-  "homepage": "https://react-component.github.io/segmented",
   "repository": {
     "type": "git",
-    "url": "git@github.com:react-component/segmented.git"
+    "url": "git@github.com:lotus-fe/react-components.git"
   },
   "bugs": {
-    "url": "http://github.com/react-component/segmented/issues"
+    "url": "https://github.com/lotus-fe/react-components/issues"
   },
   "license": "MIT",
   "scripts": {
@@ -38,10 +37,7 @@
     "rc-motion": "^2.6.2"
   },
   "devDependencies": {
-    "jest": "^29.3.1",
-    "jest-environment-jsdom": "^29.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.2.0"
   },
   "peerDependencies": {
     "react": ">=16.0.0",

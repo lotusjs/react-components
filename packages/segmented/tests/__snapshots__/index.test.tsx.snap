@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`rc-segmented render empty segmented 1`] = `
+exports[`Segmented render empty segmented 1`] = `
 <div
   class="rc-segmented"
 >
@@ -10,7 +10,7 @@ exports[`rc-segmented render empty segmented 1`] = `
 </div>
 `;
 
-exports[`rc-segmented render label with ReactNode 1`] = `
+exports[`Segmented render label with ReactNode 1`] = `
 <div
   class="rc-segmented"
 >
@@ -68,7 +68,7 @@ exports[`rc-segmented render label with ReactNode 1`] = `
 </div>
 `;
 
-exports[`rc-segmented render segmented ok 1`] = `
+exports[`Segmented render segmented ok 1`] = `
 <div
   class="rc-segmented"
 >
@@ -122,7 +122,7 @@ exports[`rc-segmented render segmented ok 1`] = `
 </div>
 `;
 
-exports[`rc-segmented render segmented with CSSMotion basic 1`] = `
+exports[`Segmented render segmented with CSSMotion basic 1`] = `
 <div
   class="rc-segmented"
 >
@@ -176,7 +176,7 @@ exports[`rc-segmented render segmented with CSSMotion basic 1`] = `
 </div>
 `;
 
-exports[`rc-segmented render segmented with options 1`] = `
+exports[`Segmented render segmented with options 1`] = `
 <div
   class="rc-segmented"
 >
@@ -230,7 +230,7 @@ exports[`rc-segmented render segmented with options 1`] = `
 </div>
 `;
 
-exports[`rc-segmented render segmented with options null/undefined 1`] = `
+exports[`Segmented render segmented with options null/undefined 1`] = `
 <div
   class="rc-segmented rc-segmented-disabled"
 >
@@ -279,7 +279,7 @@ exports[`rc-segmented render segmented with options null/undefined 1`] = `
 </div>
 `;
 
-exports[`rc-segmented render segmented with options: 1 1`] = `
+exports[`Segmented render segmented with options: 1 1`] = `
 <div
   class="rc-segmented"
 >
@@ -361,7 +361,7 @@ exports[`rc-segmented render segmented with options: 1 1`] = `
 </div>
 `;
 
-exports[`rc-segmented render segmented with options: 2 1`] = `
+exports[`Segmented render segmented with options: 2 1`] = `
 <div
   class="rc-segmented"
 >
@@ -415,7 +415,7 @@ exports[`rc-segmented render segmented with options: 2 1`] = `
 </div>
 `;
 
-exports[`rc-segmented render segmented with options: disabled 1`] = `
+exports[`Segmented render segmented with options: disabled 1`] = `
 <div
   class="rc-segmented"
 >
@@ -470,7 +470,7 @@ exports[`rc-segmented render segmented with options: disabled 1`] = `
 </div>
 `;
 
-exports[`rc-segmented render segmented with title 1`] = `
+exports[`Segmented render segmented with title 1`] = `
 <div
   class="rc-segmented"
 >
@@ -553,7 +553,7 @@ exports[`rc-segmented render segmented with title 1`] = `
 </div>
 `;
 
-exports[`rc-segmented render segmented: disabled 1`] = `
+exports[`Segmented render segmented: disabled 1`] = `
 <div
   class="rc-segmented rc-segmented-disabled"
 >

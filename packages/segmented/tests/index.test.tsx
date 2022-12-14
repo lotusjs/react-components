@@ -11,7 +11,7 @@ jest.mock('rc-motion/lib/util/motion', () => {
   };
 });
 
-describe('rc-segmented', () => {
+describe('Segmented', () => {
   function expectMatchChecked(container: HTMLElement, checkedList: boolean[]) {
     const inputList = Array.from(
       container.querySelectorAll<HTMLInputElement>('.rc-segmented-item-input'),
