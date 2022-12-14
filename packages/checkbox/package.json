@@ -1,7 +1,7 @@
 {
   "name": "@lotus-design/checkbox",
   "version": "1.0.0",
-  "description": "React Checkbox Component",
+  "description": "React checkbox component",
   "keywords": [
     "react",
     "react-component",
@@ -12,20 +12,28 @@
   "module": "./es/index.js",
   "types": "./es/index.d.ts",
   "files": [
+    "assets/*.css",
+    "assets/*.less",
     "es",
-    "lib"
+    "lib",
+    "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lotus-fe/react-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lotus-fe/react-components/issues"
+  },
   "scripts": {
-    "build": "redbud build",
-    "test": "jest",
-    "coverage": "jest --coverage"
+    "build": "redbud build"
   },
   "peerDependencies": {
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
   },
   "dependencies": {
-    "@pansy/shared": "^1.7.0",
+    "@pansy/shared": "^1.8.0",
     "@lotus-design/utils": "^1.0.0"
   },
   "license": "MIT",

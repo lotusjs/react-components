@@ -1,7 +1,7 @@
 {
   "name": "@lotus-design/utils",
   "version": "1.0.0",
-  "description": "React utils",
+  "description": "React components utils",
   "keywords": [
     "react",
     "react-util",
@@ -18,6 +18,10 @@
     "build": "redbud build"
   },
   "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
   "authors": [
     "wangxingkang <wang_xingkang@qq.com> (https://github.com/wangxingkang)"
   ],
