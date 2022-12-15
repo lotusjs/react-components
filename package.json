@@ -1,6 +1,8 @@
 {
   "scripts": {
+    "start": "dumi dev",
     "build": "pnpm -r build",
+    "build:site": "dumi build",
     "test": "jest",
     "coverage": "jest --coverage",
     "prepare": "husky install",
