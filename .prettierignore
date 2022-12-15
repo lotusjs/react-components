@@ -1,0 +1,16 @@
+pnpm-lock.yaml
+
+.dumi/tmp
+.dumi/tmp-production
+
+lib/
+es/
+dist/
+
+*.snap
+*.js
+*.jsx
+
+.gitignore
+.npmignore
+.prettierignore
