@@ -28,7 +28,7 @@ export interface CheckboxProps
 
 export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
   const {
-    prefixCls = 'rc-checkbox',
+    prefixCls = 'l-checkbox',
     className,
     style,
     checked,
@@ -41,7 +41,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const [rawValue, setRawValue] = useMergedState(defaultChecked, {
-    value: checked,
+    value: checked
   });
 
   useImperativeHandle(ref, () => ({
@@ -51,12 +51,12 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
     blur: () => {
       inputRef.current?.blur();
     },
-    input: inputRef.current,
+    input: inputRef.current
   }));
 
   const classString = classNames(prefixCls, className, {
     [`${prefixCls}-checked`]: rawValue,
-    [`${prefixCls}-disabled`]: disabled,
+    [`${prefixCls}-disabled`]: disabled
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -71,7 +71,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
     onChange?.({
       target: {
         ...props,
-        checked: e.target.checked,
+        checked: e.target.checked
       },
       stopPropagation() {
         e.stopPropagation();
@@ -79,7 +79,7 @@ export const Checkbox = forwardRef<CheckboxRef, CheckboxProps>((props, ref) => {
       preventDefault() {
         e.preventDefault();
       },
-      nativeEvent: e.nativeEvent,
+      nativeEvent: e.nativeEvent
     });
   };
 

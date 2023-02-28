@@ -3,7 +3,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@@/*": [".dumi/tmp/*"]
+      "@@/*": [".dumi/tmp/*"],
+      "@lotus-design/checkbox": ["./packages/checkbox/src/index.tsx"],
+      "@lotus-design/utils": ["./packages/utils/src/index.ts"]
     }
   },
   "include": [".dumi/**/*", ".dumirc.ts", "**/*.ts", "**/*.tsx"]
