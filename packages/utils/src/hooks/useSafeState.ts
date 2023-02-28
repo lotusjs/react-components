@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { useRef, useState, useEffect } from 'react';
 
-type Updater<T> = T | ((prevValue: T) => T);
+export type Updater<T> = T | ((prevValue: T) => T);
 
 export type SetState<T> = (
   nextValue: Updater<T>,
@@ -8,7 +8,7 @@ export type SetState<T> = (
    * Will not update state when destroyed.
    * Developer should make sure this is safe to ignore.
    */
-  ignoreDestroy?: boolean,
+  ignoreDestroy?: boolean
 ) => void;
 
 /**
@@ -16,13 +16,11 @@ export type SetState<T> = (
  * We do not make this auto is to avoid real memory leak.
  * Developer should confirm it's safe to ignore themselves.
  */
-export function useSafeState<T>(
-  defaultValue?: T | (() => T),
-): [T, SetState<T>] {
-  const destroyRef = React.useRef(false);
-  const [value, setValue] = React.useState(defaultValue);
+export function useSafeState<T>(defaultValue?: T | (() => T)): [T, SetState<T>] {
+  const destroyRef = useRef(false);
+  const [value, setValue] = useState(defaultValue);
 
-  React.useEffect(() => {
+  useEffect(() => {
     destroyRef.current = false;
 
     return () => {
