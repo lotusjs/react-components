@@ -19,8 +19,8 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "react": ">=16.0.0",
-    "react-dom": ">=16.0.0"
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
   },
   "authors": [
     "wangxingkang <wang_xingkang@qq.com> (https://github.com/wangxingkang)"
