@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { forwardRef, useRef, useMemo, useState } from 'react';
 import { classNames } from '@pansy/shared';
 import { useMergedState, omit, composeRef } from '@lotus-design/utils';
 import { normalizeOptions } from './utils';
@@ -22,8 +22,7 @@ export interface SegmentedLabeledOption {
 
 export type SegmentedOptions = (SegmentedRawOption | SegmentedLabeledOption)[];
 
-export interface SegmentedProps
-  extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
+export interface SegmentedProps extends Omit<React.HTMLProps<HTMLDivElement>, 'onChange'> {
   options: SegmentedOptions;
   defaultValue?: SegmentedValue;
   value?: SegmentedValue;
@@ -34,7 +33,7 @@ export interface SegmentedProps
   motionName?: string;
 }
 
-const InternalSegmentedOption: React.FC<{
+export interface InternalSegmentedOptionProps {
   prefixCls: string;
   className?: string;
   disabled?: boolean;
@@ -42,20 +41,11 @@ const InternalSegmentedOption: React.FC<{
   label: React.ReactNode;
   title?: string;
   value: SegmentedRawOption;
-  onChange: (
-    e: React.ChangeEvent<HTMLInputElement>,
-    value: SegmentedRawOption,
-  ) => void;
-}> = ({
-  prefixCls,
-  className,
-  disabled,
-  checked,
-  label,
-  title,
-  value,
-  onChange,
-}) => {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>, value: SegmentedRawOption) => void;
+}
+
+const InternalSegmentedOption: React.FC<InternalSegmentedOptionProps> = (props) => {
+  const { prefixCls, className, disabled, checked, label, title, value, onChange } = props;
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled) {
       return;
@@ -67,7 +57,7 @@ const InternalSegmentedOption: React.FC<{
   return (
     <label
       className={classNames(className, {
-        [`${prefixCls}-item-disabled`]: disabled,
+        [`${prefixCls}-item-disabled`]: disabled
       })}
     >
       <input
@@ -84,107 +74,95 @@ const InternalSegmentedOption: React.FC<{
   );
 };
 
-export const Segmented = React.forwardRef<HTMLDivElement, SegmentedProps>(
-  (props, ref) => {
-    const {
-      prefixCls = 'rc-segmented',
-      direction,
-      options = [],
-      disabled,
-      defaultValue,
-      value,
-      onChange,
-      className = '',
-      motionName = 'thumb-motion',
-      ...restProps
-    } = props;
+export const Segmented = forwardRef<HTMLDivElement, SegmentedProps>((props, ref) => {
+  const {
+    prefixCls = 'l-segmented',
+    direction,
+    options = [],
+    disabled,
+    defaultValue,
+    value,
+    onChange,
+    className = '',
+    motionName = 'thumb-motion',
+    ...restProps
+  } = props;
 
-    const containerRef = React.useRef<HTMLDivElement>(null);
-    const mergedRef = React.useMemo(
-      () => composeRef<HTMLDivElement>(containerRef, ref),
-      [containerRef, ref],
-    );
+  const containerRef = useRef<HTMLDivElement>(null);
+  const mergedRef = useMemo(
+    () => composeRef<HTMLDivElement>(containerRef, ref),
+    [containerRef, ref]
+  );
 
-    const segmentedOptions = React.useMemo(() => {
-      return normalizeOptions(options);
-    }, [options]);
+  const segmentedOptions = useMemo(() => {
+    return normalizeOptions(options);
+  }, [options]);
 
-    // Note: We should not auto switch value when value not exist in options
-    // which may break single source of truth.
-    const [rawValue, setRawValue] = useMergedState(segmentedOptions[0]?.value, {
-      value,
-      defaultValue,
-    });
+  // Note: We should not auto switch value when value not exist in options
+  // which may break single source of truth.
+  const [rawValue, setRawValue] = useMergedState(segmentedOptions[0]?.value, {
+    value,
+    defaultValue
+  });
 
-    // ======================= Change ========================
-    const [thumbShow, setThumbShow] = React.useState(false);
+  // ======================= Change ========================
+  const [thumbShow, setThumbShow] = useState(false);
 
-    const handleChange = (
-      event: React.ChangeEvent<HTMLInputElement>,
-      val: SegmentedRawOption,
-    ) => {
-      if (disabled) {
-        return;
-      }
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>, val: SegmentedRawOption) => {
+    if (disabled) {
+      return;
+    }
 
-      setRawValue(val);
+    setRawValue(val);
 
-      onChange?.(val);
-    };
+    onChange?.(val);
+  };
 
-    const divProps = omit(restProps, ['children']);
+  const divProps = omit(restProps, ['children']);
 
-    return (
-      <div
-        {...divProps}
-        className={classNames(
-          prefixCls,
-          {
-            [`${prefixCls}-rtl`]: direction === 'rtl',
-            [`${prefixCls}-disabled`]: disabled,
-          },
-          className,
-        )}
-        ref={mergedRef}
-      >
-        <div className={`${prefixCls}-group`}>
-          <MotionThumb
+  return (
+    <div
+      {...divProps}
+      className={classNames(
+        prefixCls,
+        {
+          [`${prefixCls}-rtl`]: direction === 'rtl',
+          [`${prefixCls}-disabled`]: disabled
+        },
+        className
+      )}
+      ref={mergedRef}
+    >
+      <div className={`${prefixCls}-group`}>
+        <MotionThumb
+          prefixCls={prefixCls}
+          value={rawValue}
+          containerRef={containerRef}
+          motionName={`${prefixCls}-${motionName}`}
+          getValueIndex={(val) => segmentedOptions.findIndex((n) => n.value === val)}
+          onMotionStart={() => {
+            setThumbShow(true);
+          }}
+          onMotionEnd={() => {
+            setThumbShow(false);
+          }}
+        />
+        {segmentedOptions.map((segmentedOption) => (
+          <InternalSegmentedOption
+            key={segmentedOption.value}
             prefixCls={prefixCls}
-            value={rawValue}
-            containerRef={containerRef}
-            motionName={`${prefixCls}-${motionName}`}
-            getValueIndex={(val) =>
-              segmentedOptions.findIndex((n) => n.value === val)
-            }
-            onMotionStart={() => {
-              setThumbShow(true);
-            }}
-            onMotionEnd={() => {
-              setThumbShow(false);
-            }}
+            className={classNames(segmentedOption.className, `${prefixCls}-item`, {
+              [`${prefixCls}-item-selected`]: segmentedOption.value === rawValue && !thumbShow
+            })}
+            checked={segmentedOption.value === rawValue}
+            onChange={handleChange}
+            {...segmentedOption}
+            disabled={!!disabled || !!segmentedOption.disabled}
           />
-          {segmentedOptions.map((segmentedOption) => (
-            <InternalSegmentedOption
-              key={segmentedOption.value}
-              prefixCls={prefixCls}
-              className={classNames(
-                segmentedOption.className,
-                `${prefixCls}-item`,
-                {
-                  [`${prefixCls}-item-selected`]:
-                    segmentedOption.value === rawValue && !thumbShow,
-                },
-              )}
-              checked={segmentedOption.value === rawValue}
-              onChange={handleChange}
-              {...segmentedOption}
-              disabled={!!disabled || !!segmentedOption.disabled}
-            />
-          ))}
-        </div>
+        ))}
       </div>
-    );
-  },
-);
+    </div>
+  );
+});
 
 Segmented.displayName = 'Segmented';

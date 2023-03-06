@@ -5,6 +5,7 @@
     "paths": {
       "@@/*": [".dumi/tmp/*"],
       "@lotus-design/checkbox": ["./packages/checkbox/src/index.tsx"],
+      "@lotus-design/segmented": ["./packages/segmented/src/index.tsx"],
       "@lotus-design/utils": ["./packages/utils/src/index.ts"]
     }
   },

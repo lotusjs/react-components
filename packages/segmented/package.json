@@ -7,7 +7,9 @@
     "react-component",
     "react-segmented",
     "react-segmented-controls",
-    "segmented controls"
+    "segmented controls",
+    "lotus",
+    "lotus-design"
   ],
   "main": "./lib/index",
   "module": "./es/index",
