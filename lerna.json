@@ -1,6 +1,7 @@
 {
   "version": "independent",
-  "packages": ["packages/*"],
+  "workspaces": ["packages/*"],
+  "useWorkspaces": true,
   "command": {
     "publish": {
       "npmClient": "pnpm",
