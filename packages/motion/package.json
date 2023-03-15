@@ -2,11 +2,33 @@
   "name": "@lotus-design/motion",
   "version": "1.0.0",
   "description": "React lifecycle controlled motion library",
-  "main": "index.js",
+  "keywords": [
+    "react",
+    "react-component",
+    "react-segmented",
+    "react-segmented-controls",
+    "segmented controls",
+    "lotus",
+    "lotus-design"
+  ],
+  "main": "./lib/index",
+  "module": "./es/index",
+  "types": "./es/index.d.ts",
+  "files": [
+    "assets/*.css",
+    "assets/*.less",
+    "es",
+    "lib",
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "authors": [
+    "wangxingkang <wang_xingkang@qq.com> (https://github.com/wangxingkang)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
