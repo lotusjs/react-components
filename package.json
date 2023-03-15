@@ -6,7 +6,8 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "prepare": "husky install && dumi setup",
-    "clean": "rimraf ./**/node_modules",
+    "clean": "redbud run ./scripts/clean.ts",
+    "tsc:check": "tsc --noEmit",
     "release": "redbud run ./scripts/release.ts"
   },
   "devDependencies": {
