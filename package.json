@@ -53,5 +53,8 @@
     "*.ts?(x)": [
       "prettier --no-error-on-unmatched-pattern --cache --parser=typescript --write"
     ]
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
