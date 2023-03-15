@@ -1,0 +1,19 @@
+{
+  "version": "independent",
+  "packages": ["packages/*"],
+  "command": {
+    "publish": {
+      "npmClient": "pnpm",
+      "verifyAccess": false,
+      "ignoreChanges": [
+        "*.md",
+        "lerna.json",
+        "**/test/**",
+        "**/docs/**",
+        "**/dist/**",
+        "**/node_modules/**"
+      ],
+      "message": "chore(release): publish"
+    }
+  }
+}
