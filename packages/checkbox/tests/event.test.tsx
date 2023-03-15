@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { KeyCode } from '@pansy/shared';
 import { fireEvent, render } from '@testing-library/react';
 import { Checkbox } from '../src';
@@ -104,7 +104,7 @@ describe('Checkbox.Event', () => {
     const { container } = render(
       <div onKeyDown={onKeyDown} onKeyPress={onKeyPress} onKeyUp={onKeyUp}>
         <Checkbox />
-      </div>,
+      </div>
     );
     const inputEl = container.querySelector('input')!;
 
@@ -129,7 +129,7 @@ describe('Checkbox.Event', () => {
             e.preventDefault();
           }}
         />
-      </div>,
+      </div>
     );
 
     const inputEl = container.querySelector('input')!;

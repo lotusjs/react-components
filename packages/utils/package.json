@@ -22,6 +22,12 @@
     "react": ">=16.9.0",
     "react-dom": ">=16.9.0"
   },
+  "dependencies": {
+    "react-is": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react-is": "^17.0.3"
+  },
   "authors": [
     "wangxingkang <wang_xingkang@qq.com> (https://github.com/wangxingkang)"
   ],

@@ -6,7 +6,9 @@
     "react",
     "react-component",
     "react-checkbox",
-    "checkbox"
+    "checkbox",
+    "lotus",
+    "lotus-design"
   ],
   "main": "./lib/index.js",
   "module": "./es/index.js",

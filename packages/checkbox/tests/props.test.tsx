@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
 import { Checkbox } from '../src';
 
@@ -20,4 +20,4 @@ describe('Checkbox.Props', () => {
     fireEvent.click(inputEl);
     expect(inputEl.checked).toBe(false);
   });
-})
+});
