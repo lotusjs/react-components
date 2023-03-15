@@ -1,6 +1,6 @@
 {
   "name": "@lotus-design/motion",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "React lifecycle controlled motion library",
   "main": "index.js",
   "scripts": {
