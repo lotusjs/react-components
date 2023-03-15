@@ -1,6 +1,6 @@
 {
   "name": "@lotus-design/checkbox",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "React checkbox component",
   "keywords": [
     "react",
@@ -35,8 +35,8 @@
     "react-dom": ">=16.9.0"
   },
   "dependencies": {
-    "@pansy/shared": "^1.11.0",
-    "@lotus-design/utils": "^1.0.0"
+    "@lotus-design/utils": "^1.0.0",
+    "@pansy/shared": "^1.11.0"
   },
   "license": "MIT",
   "authors": [

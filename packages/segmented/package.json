@@ -1,6 +1,6 @@
 {
   "name": "@lotus-design/segmented",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React segmented component",
   "keywords": [
     "react",
@@ -37,8 +37,8 @@
     "react-dom": ">=16.9.0"
   },
   "dependencies": {
-    "@pansy/shared": "^1.11.0",
     "@lotus-design/utils": "^1.0.0",
+    "@pansy/shared": "^1.11.0",
     "rc-motion": "^2.6.3"
   },
   "license": "MIT",
