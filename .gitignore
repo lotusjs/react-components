@@ -7,8 +7,10 @@ dist
 
 yarn.lock
 package-lock.json
-pnpm-lock.yaml
 .pnpm-debug.log
+
+# lerna
+lerna-debug.log
 
 # dumi
 .dumi/tmp
