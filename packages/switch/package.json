@@ -1,12 +1,12 @@
 {
-  "name": "@lotus-design/checkbox",
+  "name": "@lotus-design/switch",
   "version": "1.0.0",
-  "description": "React checkbox component",
+  "description": "React switch component",
   "keywords": [
     "react",
     "react-component",
-    "react-checkbox",
-    "checkbox",
+    "react-switch",
+    "switch",
     "lotus",
     "lotus-design"
   ],

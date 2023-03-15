@@ -1,6 +1,6 @@
 import React, { forwardRef, useRef, useMemo, useState } from 'react';
-import { classNames } from '@pansy/shared';
-import { useMergedState, omit, composeRef } from '@lotus-design/utils';
+import { classNames, omit } from '@pansy/shared';
+import { useMergedState, composeRef } from '@lotus-design/utils';
 import { normalizeOptions } from './utils';
 
 import MotionThumb from './MotionThumb';

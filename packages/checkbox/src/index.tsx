@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { forwardRef, useImperativeHandle, useRef } from 'react';
+import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 import { useMergedState } from '@lotus-design/utils';
 import { classNames } from '@pansy/shared';
 

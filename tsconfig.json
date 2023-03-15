@@ -4,6 +4,7 @@
     "baseUrl": "./",
     "paths": {
       "@@/*": [".dumi/tmp/*"],
+      "@lotus-design/switch": ["./packages/switch/src/index.tsx"],
       "@lotus-design/checkbox": ["./packages/checkbox/src/index.tsx"],
       "@lotus-design/segmented": ["./packages/segmented/src/index.tsx"],
       "@lotus-design/utils": ["./packages/utils/src/index.ts"]
