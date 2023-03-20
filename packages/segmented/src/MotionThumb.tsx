@@ -1,20 +1,22 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import CSSMotion from 'rc-motion';
 import { classNames } from '@pansy/shared';
 import { useLayoutEffect, composeRef } from '@lotus-design/utils';
-import type { SegmentedValue } from './Segmented';
+import type { SegmentedValue, Direction } from './Segmented';
 
 type ThumbReact = {
   left: number;
+  right: number;
   width: number;
 } | null;
 
 export interface MotionThumbInterface {
+  prefixCls: string;
   containerRef: React.RefObject<HTMLDivElement>;
   value: SegmentedValue;
-  getValueIndex: (value: SegmentedValue) => number;
-  prefixCls: string;
   motionName: string;
+  direction?: Direction;
+  getValueIndex: (value: SegmentedValue) => number;
   onMotionStart: VoidFunction;
   onMotionEnd: VoidFunction;
 }
@@ -23,15 +25,27 @@ const calcThumbStyle = (targetElement: HTMLElement | null | undefined): ThumbRea
   targetElement
     ? {
         left: targetElement.offsetLeft,
+        right:
+          (targetElement.parentElement!.clientWidth as number) -
+          targetElement.clientWidth -
+          targetElement.offsetLeft,
         width: targetElement.clientWidth
       }
     : null;
 
 const toPX = (value: number) => (value !== undefined ? `${value}px` : undefined);
 
-export default function MotionThumb(props: MotionThumbInterface) {
-  const { prefixCls, containerRef, value, getValueIndex, motionName, onMotionStart, onMotionEnd } =
-    props;
+export function MotionThumb(props: MotionThumbInterface) {
+  const {
+    prefixCls,
+    containerRef,
+    value,
+    direction,
+    motionName,
+    getValueIndex,
+    onMotionStart,
+    onMotionEnd
+  } = props;
 
   const thumbRef = useRef<HTMLDivElement>(null);
   const [prevValue, setPrevValue] = useState(value);
@@ -42,7 +56,7 @@ export default function MotionThumb(props: MotionThumbInterface) {
 
     const ele = containerRef.current?.querySelectorAll<HTMLDivElement>(`.${prefixCls}-item`)[index];
 
-    return ele;
+    return ele?.offsetParent && ele;
   };
 
   const [prevStyle, setPrevStyle] = useState<ThumbReact>(null);
@@ -67,6 +81,17 @@ export default function MotionThumb(props: MotionThumbInterface) {
       }
     }
   }, [value]);
+
+  const thumbStart = useMemo(
+    () =>
+      direction === 'rtl' ? toPX(-(prevStyle?.right as number)) : toPX(prevStyle?.left as number),
+    [direction, prevStyle]
+  );
+  const thumbActive = useMemo(
+    () =>
+      direction === 'rtl' ? toPX(-(nextStyle?.right as number)) : toPX(nextStyle?.left as number),
+    [direction, nextStyle]
+  );
 
   // =========================== Motion ===========================
   const onAppearStart = () => {
@@ -105,9 +130,9 @@ export default function MotionThumb(props: MotionThumbInterface) {
       {({ className: motionClassName, style: motionStyle }, ref) => {
         const mergedStyle = {
           ...motionStyle,
-          '--thumb-start-left': toPX(prevStyle?.left),
+          '--thumb-start-left': thumbStart,
           '--thumb-start-width': toPX(prevStyle?.width),
-          '--thumb-active-left': toPX(nextStyle?.left),
+          '--thumb-active-left': thumbActive,
           '--thumb-active-width': toPX(nextStyle?.width)
         } as React.CSSProperties;
 

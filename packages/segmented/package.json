@@ -29,6 +29,7 @@
     "url": "https://github.com/lotus-fe/react-components/issues"
   },
   "scripts": {
+    "dev": "redbud dev",
     "build": "redbud build"
   },
   "peerDependencies": {

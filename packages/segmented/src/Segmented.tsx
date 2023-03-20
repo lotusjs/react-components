@@ -1,11 +1,11 @@
 import React, { forwardRef, useRef, useMemo, useState } from 'react';
 import { classNames, omit } from '@pansy/shared';
 import { useMergedState, composeRef } from '@lotus-design/utils';
+import { MotionThumb } from './MotionThumb';
 import { normalizeOptions } from './utils';
 
-import MotionThumb from './MotionThumb';
-
 export type SegmentedValue = string | number;
+export type Direction = 'ltr' | 'rtl';
 
 export type SegmentedRawOption = SegmentedValue;
 
@@ -29,7 +29,7 @@ export interface SegmentedProps extends Omit<React.HTMLProps<HTMLDivElement>, 'o
   onChange?: (value: SegmentedValue) => void;
   disabled?: boolean;
   prefixCls?: string;
-  direction?: 'ltr' | 'rtl';
+  direction?: Direction;
   motionName?: string;
 }
 
@@ -114,7 +114,6 @@ export const Segmented = forwardRef<HTMLDivElement, SegmentedProps>((props, ref)
     }
 
     setRawValue(val);
-
     onChange?.(val);
   };
 
