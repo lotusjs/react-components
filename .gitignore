@@ -19,3 +19,7 @@ lerna-debug.log
 
 # test
 coverage
+
+# IDE
+.idea
+
