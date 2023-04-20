@@ -1,0 +1,49 @@
+{
+  "name": "@lotus-design/scrollbar",
+  "version": "0.1.0",
+  "description": "React scrollbar component",
+  "keywords": [
+    "react",
+    "react-component",
+    "react-scrollbar",
+    "scrollbar",
+    "lotus",
+    "lotus-design"
+  ],
+  "main": "./lib/index",
+  "module": "./es/index",
+  "types": "./es/index.d.ts",
+  "files": [
+    "assets/*.css",
+    "assets/*.less",
+    "es",
+    "lib",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lotus-fe/react-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lotus-fe/react-components/issues"
+  },
+  "scripts": {
+    "dev": "redbud dev",
+    "build": "redbud build"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "dependencies": {
+    "@lotus-design/utils": "^1.0.0",
+    "@pansy/shared": "^1.11.0"
+  },
+  "license": "MIT",
+  "authors": [
+    "wangxingkang <wang_xingkang@qq.com> (https://github.com/wangxingkang)"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

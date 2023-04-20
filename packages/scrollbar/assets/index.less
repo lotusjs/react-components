@@ -1,0 +1,79 @@
+@scrollbar-prefix-cls: l-scrollbar;
+
+@track-size: 16px;
+@track-size-sm: 12px;
+@padding: 4px;
+@padding-sm: 4px;
+@radius: 4px;
+@base-color: #0a1b39;
+
+.@{scrollbar-prefix-cls} {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+
+  .@{scrollbar-prefix-cls}-wrap {
+    overflow: auto;
+    height: 100%;
+  }
+
+  // 隐藏原生滚动条
+  .@{scrollbar-prefix-cls}-wrap-native-hidden {
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .@{scrollbar-prefix-cls}-bar {
+    position: absolute;
+    padding: @padding;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    &-horizontal {
+      left: 0;
+      height: @track-size;
+
+      > div {
+        height: 100%;
+      }
+    }
+
+    &-vertical {
+      top: 0;
+      width: @track-size;
+
+      > div {
+        width: 100%;
+      }
+    }
+
+    &-thumb {
+      position: relative;
+      display: block;
+      width: 0;
+      height: 0;
+      cursor: pointer;
+      border-radius: @radius;
+      background-color: fade(@base-color, 25%);
+
+      &:hover,
+      &:active {
+        background-color: fade(@base-color, 35%);
+      }
+    }
+  }
+
+  .@{scrollbar-prefix-cls}-small .@{scrollbar-prefix-cls}-bar {
+    .@{scrollbar-prefix-cls}-bar-horizontal {
+      height: @track-size-sm;
+    }
+
+    .@{scrollbar-prefix-cls}-bar-vertical {
+      width: @track-size-sm;
+    }
+  }
+}
