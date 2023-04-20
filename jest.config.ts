@@ -10,7 +10,9 @@ const config: Config.InitialOptions = {
     ...(defaultConfig.setupFilesAfterEnv || []),
     './tests/setupFilesAfterEnv.ts'
   ],
-}
+  moduleNameMapper: {
+    '@lotus-design/utils': '<rootDir>/packages/utils/src/index.ts'
+  }
+};
 
 export default config;
-
