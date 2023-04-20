@@ -1,0 +1,18 @@
+{
+  "assets": {
+    "public/logo.png": "/logo.png",
+    "umi.css": "/umi.76c5e95d.css",
+    "umi.js": "/umi.31bd7da2.js",
+    "nm__dumi__dist__client__pages__404.js": "/nm__dumi__dist__client__pages__404.0e0a960c.async.js",
+    "dumi__tmp-production__dumi__theme__ContextWrapper.js": "/dumi__tmp-production__dumi__theme__ContextWrapper.7326f1ef.async.js",
+    "nm__dumi__theme-default__layouts__DocLayout__index.js": "/nm__dumi__theme-default__layouts__DocLayout__index.975e08ca.async.js",
+    "docs__components.md.js": "/docs__components.md.acaffd72.async.js",
+    "docs__index.md.js": "/docs__index.md.1d29912b.async.js",
+    "packages__checkbox__docs__checkbox.md.js": "/packages__checkbox__docs__checkbox.md.ca2b675a.async.js",
+    "packages__scrollbar__docs__scrollbar.md.js": "/packages__scrollbar__docs__scrollbar.md.47a5b3bc.async.js",
+    "packages__segmented__docs__segmented.md.js": "/packages__segmented__docs__segmented.md.10f1a011.async.js",
+    "packages__switch__docs__switch.md.js": "/packages__switch__docs__switch.md.84fe88e3.async.js",
+    "nm__dumi__dist__client__pages__Demo__index.js": "/nm__dumi__dist__client__pages__Demo__index.68b2b85a.async.js",
+    "demos.js": "/demos.b0a41b33.async.js"
+  }
+}
