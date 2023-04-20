@@ -4,8 +4,8 @@ title: Scrollbar
 subtitle: 滚动条
 
 group:
-  title: 数据展示
-  order: 1
+  title: 通用
+  order: 0
 ---
 
 ## 代码示例
@@ -25,6 +25,6 @@ group:
 | wrapClassName | 容器的自定义类名                                                     | string               | --        | --   |
 | wrapStyle     | 容器的自定义样式                                                     | CSSProperties        | --        | --   |
 | noresize      | 不响应容器尺寸变化，如果容器尺寸不会发生变化，最好设置它可以优化性能 | boolean              | `false`   | --   |
-| always        | 滚动条总是显示或隐藏                                                 | 'show' \| 'hidden'   | `false`   | --   |
+| always        | 滚动条总是显示或隐藏                                                 | 'show' \| 'hidden'   | --        | --   |
 | size          | 滚动条尺寸                                                           | 'small' \| 'default' | `default` | --   |
 | minSize       | 滚动条最小尺寸                                                       | number               | `20`      | --   |
