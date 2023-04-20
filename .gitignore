@@ -17,9 +17,12 @@ lerna-debug.log
 .dumi/tmp-test
 .dumi/tmp-production
 
+_site
+
 # test
 coverage
 
 # IDE
 .idea
+/server
 
