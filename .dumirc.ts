@@ -27,6 +27,7 @@ console.log(`🌼 alias list \n${chalk.blue(Object.keys(alias).join('\n'))}`);
 
 export default defineConfig({
   hash: true,
+  outputPath: '_site',
   themeConfig: {
     logo: '/logo.png',
     name: 'Lotus',

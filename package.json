@@ -2,12 +2,14 @@
   "scripts": {
     "start": "dumi dev",
     "build": "pnpm -r build",
-    "build:site": "dumi build",
+    "site": "dumi build && cp .surgeignore _site",
     "test": "jest",
     "coverage": "jest --coverage",
+    "predeploy": "pnpm run site && cp CNAME _site",
     "prepare": "husky install && dumi setup",
     "clean": "redbud run ./scripts/clean.ts",
     "tsc:check": "tsc --noEmit",
+    "deploy": "gh-pages -d _site -b gh-pages -f",
     "release": "redbud run ./scripts/release.ts"
   },
   "devDependencies": {
@@ -29,6 +31,7 @@
     "@umijs/utils": "^4.0.57",
     "antd": "^5.3.1",
     "dumi": "^2.1.15",
+    "gh-pages": "^5.0.0",
     "git-repo-info": "^2.1.1",
     "husky": "^8.0.3",
     "jest": "^29.5.0",
